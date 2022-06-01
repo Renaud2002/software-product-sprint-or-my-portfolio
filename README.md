@@ -1,5 +1,6 @@
 # Google Software Product Sprint
 
+<<<<<<< HEAD
 This repo contains the projects you'll work on throughout SPS.
 
 To get started:
@@ -10,3 +11,6 @@ Open the GitHub setup walkthrough: teachme ~/software-product-sprint/walkthrough
 If the tutorial panel does not open or display the walkthrough contents, try refreshing the page.
 Then follow the on-screen instructions to set up your repo.
 
+=======
+This repo contains Fred Noubieptie's portfolio and SPS projects.
+>>>>>>> dceaf4f7c6d55a44da721adf06e38591509af4bb

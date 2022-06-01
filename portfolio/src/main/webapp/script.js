@@ -26,3 +26,9 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+const ham = documet.querySelector('.ham')
+
+ham.addEventlisteber('click', function(){
+    this.classList.toggle('is-active');
+})
