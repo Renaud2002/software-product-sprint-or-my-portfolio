@@ -1,8 +1,27 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+
 #content {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
+  text-align: center;
+  min-height: 100%;
+ 
 }
+
+#main{
+    overflow: auto;
+   padding: 100px;
+}
+
 
 #greeting-container {
   margin-top: 20px;
@@ -24,13 +43,39 @@
     align-items: center;
     justify-content: space-between;
 }
+/*styling the body*/
+.body{
+    background-image: url(images/back.jpeg);
+    background-repeat: no-repeat;
+    
+}
+
+
 /*making the image good fit for the screen*/
-.image_card{
-    width: 500px;
-    height: 500px;
+.intro{
     text-align: center;
 }
 
+.image_card{
+    width: 400px;
+    height: 400px;
+    
+}
+/*working on the footer*/
+#footer{
+    background-color: #000;
+    position: relative;
+    height: 100px;
+    margin-top: -100px;
+    clear: both;
+    text-align: center;
+    color: var(--primary);
+}
+
+.footer-text{
+    position: relative;
+    top:30px;
+}
 /*getting the nav bar stuck to the page at all times*/
 nav{
     position: fixed;
