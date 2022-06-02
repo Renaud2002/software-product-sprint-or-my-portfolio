@@ -165,7 +165,7 @@ h1{
     border-radius: 99px;
 }
 
-.menu a.is-active, .menu a:hover{
+.menu a.is-active, .menu a:hover {
     background-color: var(--primary);
 }
 
