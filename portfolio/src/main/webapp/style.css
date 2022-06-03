@@ -26,6 +26,22 @@ html, body{
 #greeting-container {
   margin-top: 20px;
 }
+/*icons for contact page*/
+.fa-linkedin{
+    color: blue;
+   
+}
+
+.fa-github{
+    color: black;
+     
+}
+
+.fa-envelope{
+    color: red;
+}
+
+
 /* work cited: Tyler Potts on Youtube*/
 :root{
 --primary: #8c38ff;
