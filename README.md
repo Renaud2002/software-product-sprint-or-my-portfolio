@@ -1,7 +1,9 @@
 # Google Software Product Sprint
 
 
+
 This repo contains Renaud Noubieptie's portfolio and SPS projects.
+>>>>>>> 6569359faef796bf6816944e082d36eab62d92c8
 
 To get started:
 
@@ -12,3 +14,4 @@ If the tutorial panel does not open or display the walkthrough contents, try ref
 Then follow the on-screen instructions to set up your repo.
 
 
+>>>>>>> 6569359faef796bf6816944e082d36eab62d92c8

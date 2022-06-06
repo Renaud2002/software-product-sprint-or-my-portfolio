@@ -6,21 +6,48 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body class="body">
+    <nav>
+       <div class="container">
+        <h1> Fred </h1>
+
+        <div class="menu">
+            <a href="index.html" class="is-active">Home</a>
+            <a href="about_me.html">About Me</a>
+           <!-- <a href="gallery.html">Gallery</a>-->
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <buttom class="ham">
+            <span></span>
+            <span></span>
+            <span></span>
+        </buttom>
+
+       </div>
+    </nav>
+
     <div id="content">
-      <h1>Renaud's Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
+      <div id="main">
+    
+      <h1>Hi Welcome 	&#127800;</h1>
+      <p>The bottom below will extend you a greating in your langauge</p>
+      <!--<p>Click <a href="/hello">here</a> </p>-->
+      <p>From me to you:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
-    </div>
+    
 
-    <section>
+    
         <!--this section is where I introduce my self-->
-        <h2>A little bit about my self</h2>
+        <h2 align="center">A little bit about my self</h2>
         <!--where I will put an piture of myself and my mom-->
-        <p>
+        <div class="card">
+            <img class="image_card" src="images/us-15.jpg"/>
+        </div>
+
+
+        <p class="paragraph"> 
             <!--To Do: remember to add line brake to the paragraph and the picture-->
             Hi, my name is Renaud Fred Noubieptie kamgang. You can call me Fred. I am a student  studying 
             computer science at the George Washington University. My family and I moved to the U.S. in june of 2017. 
@@ -28,6 +55,18 @@
             Since then I have embarked on an adventure to follow my dreams  and my goals for the future. 
             All that I have done to this day would have not been possible if not for Kimberly and Brad Barron and my mom.
         </p>
-    </section>
+      </div>
+
+     
+    </div>
+
+    <footer>
+        <div id="footer">
+            <h3 class="footer-text">Thank you for visting my Portfolio if you would like to contact me<br/> 
+                please refer to the contact page of this site</h3>
+        </div>
+      </footer>
   </body>
+
+  
 </html>
