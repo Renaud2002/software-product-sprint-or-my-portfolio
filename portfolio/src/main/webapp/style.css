@@ -27,11 +27,33 @@ html, body{
 #greeting-container {
   margin-top: 20px;
 }
+
+/*styling the form*/
+
+
+textarea{
+    background-color: #734f96;
+    opacity: 0.35;
+    border-radius: 7px;
+    width: 400px;
+}
+
+.message{
+    height: 300px;
+}
+
+.submit-botton{
+    
+    width: 100px;
+    height: 30px;
+    background-color: aquamarine;
+}
+
 /*icons for contact page*/
 .fa-linkedin{
     color: blue;
     padding-right: 15px;
-    padding-top: 300px;
+    padding-top: 90px;
    
 }
 
@@ -39,14 +61,14 @@ html, body{
     color: black;
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 300px;
+    padding-top: 90px;
      
 }
 
 .fa-envelope{
     color: red;
     padding-left: 15px;
-    padding-top: 300px;
+    padding-top: 90px;
 }
 /*paragraph styling*/
 .paragraph{
