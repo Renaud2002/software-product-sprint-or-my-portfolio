@@ -27,6 +27,42 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+//var myBody = getElementByTagName('body');
+
+
+// translating text in testing phase
+/*
+function requestTranslation() {
+    const text = document.getElementById('text').value;
+    const languageCode = document.getElementById('language').value;
+
+    const resultContainer = document.getElementById('result');
+    resultContainer.innerText = 'Loading...';
+
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    fetch('/translate', {
+      method: 'POST',
+      body: params
+    }).then(response => response.text())
+    .then((translatedMessage) => {
+      resultContainer.innerText = translatedMessage;
+    });
+  }
+*/
+
+// time bottom for fetch
+async function showServerTime() {
+    const responseFromServer = await fetch('/hello');
+    const textFromResponse = await responseFromServer.text();
+  
+    const dateContainer = document.getElementById('name-container');
+    dateContainer.innerText = textFromResponse;
+}
+
+
 const ham = document.querySelector('.ham')
 
 ham.addEventlisteber('click', function(){
