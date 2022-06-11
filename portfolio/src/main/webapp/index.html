@@ -55,13 +55,19 @@
       <p class="t-area">Please enter your name here for a slightly cool suprise</p>
 
       <!--For name input-->
-      <form style="padding-top:20px;" action="/hello" method="POST">
-      <textarea name="name2-input"></textarea>
+      <form  onsubmit="showServerTime" style="padding-top:20px;"  id="form2">
+      <textarea name="name"></textarea>
 
-      <input onclick="showServerTime();"  class="submit-botton" type="submit" />
+      <!--<input onclick="showServerTime();"  class="submit-botton"  />-->
+    
+      
+      <button  type = "submit">
+        Click here
+      </button>
+    
       </form>
 
-      <!--<p id="name-container"></p>-->
+      <p id="name-container"></p>
       
        <!--End of name input-->
 

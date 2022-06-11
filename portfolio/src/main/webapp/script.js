@@ -54,17 +54,41 @@ function requestTranslation() {
 */
 
 // time bottom for fetch
-async function showServerTime() {
-    const responseFromServer = await fetch('/hello');
+async function showServerTime(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const value = Object.fromEntries(data.entries());
+
+
+    const responseFromServer = await fetch('/hello' , {
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(value),
+      });
     const textFromResponse = await responseFromServer.text();
   
-    const dateContainer = document.getElementById('name-container');
-    dateContainer.innerText = textFromResponse;
+    const helloPara = document.getElementById('name-container');
+    helloPara.innerText = `Hello ${textFromResponse} `;
 }
+// document.getElementById('form2').addEventListener('submit', showServerTime);
 
 
-const ham = document.querySelector('.ham')
+// const ham = document.querySelector('.ham')
 
-ham.addEventlisteber('click', function(){
-    this.classList.toggle('is-active');
-})
+// ham.addEventListener('click', function(){
+//    this.classList.toggle('is-active');
+// })
+
+window.onload = function(){
+    document.getElementById('form2').addEventListener('submit', showServerTime);
+
+
+    const ham = document.querySelector('.ham')
+
+    ham.addEventListener('click', function(){
+        this.classList.toggle('is-active');
+    })
+  };
