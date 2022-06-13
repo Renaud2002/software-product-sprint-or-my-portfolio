@@ -21,7 +21,7 @@ public class HelloWorldServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // PrintWriter pw= response.getWriter();
+        
 
         StringBuffer jb = new StringBuffer();
         String line = null;
@@ -42,23 +42,9 @@ public class HelloWorldServlet extends HttpServlet {
         }
 
         String textValue = gsonObject.name;
-        // final PrintWriter writerA = response.getWriter();
-
-        // final PrintWriter writer = response.getWriter();
-
-        // String htmlRespone = "<html>";
-        // htmlRespone += "<h2>Your username is: " + textValue + "</h2>";
-        // htmlRespone += "</html>";
-
-        // response.setContentType("text/html;");
+       
         response.setContentType("text/plain");
         response.getWriter().println(textValue);
 
-        // pw.println("<h1> Hello" + textValue+ "</h1>");
-        // response.getWriter().print(htmlRespone);
-
-        // System.out.println("Name: " + textValue);
-
-        // response.sendRedirect("index.html");
     }
 }

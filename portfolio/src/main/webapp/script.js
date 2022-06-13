@@ -92,3 +92,47 @@ window.onload = function(){
         this.classList.toggle('is-active');
     })
   };
+
+
+
+  //showing messages for step3 of week2
+  /** Fetches stats from the server and adds them to the page. */
+async function getRandomMessage() {
+    const responseFromServer = await fetch('/message');
+    // The json() function returns an object that contains fields that we can
+    // reference to create HTML.
+    const stats = await responseFromServer.json();
+  
+    const msgListElement = [];
+    //statsListElement.innerHTML = '';
+  
+
+    // msgListElement.push(JSON.parse(stats).data[0].message1);
+    // msgListElement.push(JSON.parse(stats).data[0].message2);
+    // msgListElement.push(JSON.parse(stats).data[0].message3);
+    
+    msgListElement.push(stats.message1);
+    msgListElement.push(stats.message2);
+    msgListElement.push(stats.message3);
+   
+    // msgListElement.appendChild(
+    //     createListElement('m1: ' + stats.message1));
+    // msgListElement.appendChild(
+    //     createListElement('m2: ' + stats.message2));
+    // msgListElement.appendChild(
+    //     createListElement('m3: ' + stats.message3));
+
+     // Pick a random greeting.
+    const messages = msgListElement[Math.floor(Math.random() * msgListElement.length)];
+
+    // Add it to the page.
+    const messageContainer = document.getElementById('message-container');
+    messageContainer.innerText = messages;
+  }
+  
+  /** Creates an <li> element containing text. */
+  function createListElement(text) {
+    const liElement = document.createElement('li');
+    liElement.innerText = text;
+    return liElement;
+  }
