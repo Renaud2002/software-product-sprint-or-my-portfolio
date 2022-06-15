@@ -33,15 +33,15 @@ public class HelloWorldServlet extends HttpServlet {
             throw new IOException(e);
         }
         Gson gson = new Gson();
-        Form2 gsonObject;
+        Form2 visitor_name;
         try {
-            gsonObject = gson.fromJson(jb.toString(), Form2.class);
+            visitor_name = gson.fromJson(jb.toString(), Form2.class);
         } catch (JsonSyntaxException e) {
             // crash and burn
             throw new IOException("Error parsing JSON request string", e);
         }
 
-        String textValue = gsonObject.name;
+        String textValue = visitor_name.name;
        
         response.setContentType("text/plain");
         response.getWriter().println(textValue);

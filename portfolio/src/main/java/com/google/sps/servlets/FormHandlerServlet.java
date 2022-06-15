@@ -22,8 +22,6 @@ public class FormHandlerServlet extends HttpServlet {
     System.out.println("Email: " + textValue2);
     System.out.println("Message: " + textValue3);
 
-    // Write the value to the response so the user can see it.
-    //response.getWriter().println("You submitted: " + textValue1 + textValue2 + textValue3);
 
     // redirect back to the contact page
     response.sendRedirect("contact.html");
