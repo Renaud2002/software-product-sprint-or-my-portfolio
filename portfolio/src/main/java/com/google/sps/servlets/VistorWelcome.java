@@ -17,7 +17,7 @@ import com.google.gson.JsonSyntaxException;
  * to /hello!
  */
 @WebServlet("/hello")
-public class HelloWorldServlet extends HttpServlet {
+public class VistorWelcome extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
