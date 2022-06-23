@@ -15,6 +15,9 @@
 /**
  * Adds a random greeting to the page.
  */
+
+var textNodes;
+
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
@@ -27,31 +30,48 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-//var myBody = getElementByTagName('body');
+
 
 
 // translating text in testing phase
-/*
-function requestTranslation() {
-    const text = document.getElementById('text').value;
-    const languageCode = document.getElementById('language').value;
 
-    const resultContainer = document.getElementById('result');
-    resultContainer.innerText = 'Loading...';
 
-    const params = new URLSearchParams();
-    params.append('text', text);
-    params.append('languageCode', languageCode);
+    async function requestTranslation(){
+        
+        const textContents = [];
+    
+        for (const node of textNodes) {
+        textContents.push(node.textContent);
+        }
 
-    fetch('/translate', {
-      method: 'POST',
-      body: params
-    }).then(response => response.text())
-    .then((translatedMessage) => {
-      resultContainer.innerText = translatedMessage;
-    });
-  }
-*/
+        // Data structure to convert to JSON, and send to the backend:
+        const languageElement = document.getElementById('language');        
+        const translateParameters = {
+            toLanguage: languageElement.options[languageElement.selectedIndex].value,
+            stringsToTranslate: textContents
+        };
+
+    
+
+        const translateResponse = await fetch('/translate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(translateParameters)
+        });
+        const translateResult = await translateResponse.json();
+
+        for (let i = 0; i < textNodes.length; i++) {
+        textNodes[i].textContent = translateResult[i];
+        }
+    }
+
+   
+    
+
+
+
 
 // time bottom for fetch
 async function showServerTime(event) {
@@ -73,14 +93,7 @@ async function showServerTime(event) {
     const helloPara = document.getElementById('name-container');
     helloPara.innerText = `Hello ${textFromResponse} `;
 }
-// document.getElementById('form2').addEventListener('submit', showServerTime);
 
-
-// const ham = document.querySelector('.ham')
-
-// ham.addEventListener('click', function(){
-//    this.classList.toggle('is-active');
-// })
 
 window.onload = function(){
     document.getElementById('form2').addEventListener('submit', showServerTime);
@@ -91,6 +104,18 @@ window.onload = function(){
     ham.addEventListener('click', function(){
         this.classList.toggle('is-active');
     })
+
+
+    function textNodesUnder(node){
+        var all = [];
+        for (node=node.firstChild;node;node=node.nextSibling){
+          if (node.nodeType==3) all.push(node);
+          else all = all.concat(textNodesUnder(node));
+        }
+        return all;
+      }
+
+    textNodes = textNodesUnder(document.body);
   };
 
 
@@ -104,24 +129,15 @@ async function getRandomMessage() {
     const stats = await responseFromServer.json();
   
     const msgListElement = [];
-    //statsListElement.innerHTML = '';
+    
   
 
-    // msgListElement.push(JSON.parse(stats).data[0].message1);
-    // msgListElement.push(JSON.parse(stats).data[0].message2);
-    // msgListElement.push(JSON.parse(stats).data[0].message3);
     
     msgListElement.push(stats.message1);
     msgListElement.push(stats.message2);
     msgListElement.push(stats.message3);
    
-    // msgListElement.appendChild(
-    //     createListElement('m1: ' + stats.message1));
-    // msgListElement.appendChild(
-    //     createListElement('m2: ' + stats.message2));
-    // msgListElement.appendChild(
-    //     createListElement('m3: ' + stats.message3));
-
+ 
      // Pick a random greeting.
     const messages = msgListElement[Math.floor(Math.random() * msgListElement.length)];
 
