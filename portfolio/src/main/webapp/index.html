@@ -7,6 +7,8 @@
     <script src="script.js"></script>
   </head>
   <body class="body">
+  
+
     <nav>
        <div class="container">
         <h1> Fred </h1>
@@ -25,17 +27,50 @@
         </buttom>
 
        </div>
-    </nav>
+    </nav>    
 
     <div id="content">
       <div id="main">
     
+    
       <h1>Hi Welcome 	&#127800;</h1>
+      <!--Translating text testing phase-->
+    <select id="language">
+        <option value="en">English</option>
+        <option value="zh">Chinese</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+        <option value="ar">Arabic</option>
+      </select>
+  
+      <button onclick="requestTranslation();">Translate</button>
+<!-- end of translate-->
+      
+      <p class="t-area">Please enter your name here for a slightly cool suprise</p>
+
+      <!--For name input-->
+      <form  onsubmit="showServerTime" style="padding-top:20px;"  id="form2">
+      <textarea name="name"></textarea>
+
+      <!--<input onclick="showServerTime();"  class="submit-botton"  />-->
+    
+      
+      <button  type = "submit">
+        Click here
+      </button>
+    
+      </form>
+
+      <p id="name-container"></p>
+      
+       <!--End of name input-->
+
+      <!--<p>Click <a href="/hello">here</a> </p>-->
       <p>The bottom below will extend you a greating in your langauge</p>
       <!--<p>Click <a href="/hello">here</a> </p>-->
       <p>From me to you:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <button class="submit-botton" onclick="addRandomGreeting()">Hello</button>
+      <p id="greeting-container"></p>
     
 
     
@@ -55,6 +90,13 @@
             Since then I have embarked on an adventure to follow my dreams  and my goals for the future. 
             All that I have done to this day would have not been possible if not for Kimberly and Brad Barron and my mom.
         </p>
+
+        <!--<h4 padding-top="20px">Just in case you would like to know what time it is, click here &#128337;</h4>
+                <button onclick="showServerTime();">
+                    Get Time
+                  </button>
+                  <p id="time-container"></p>
+                -->
       </div>
 
      
