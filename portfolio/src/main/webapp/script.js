@@ -73,7 +73,7 @@ function addRandomGreeting() {
 
 
 
-// time bottom for fetch
+// Hello to the vistor
 async function showServerTime(event) {
     event.preventDefault();
 
@@ -133,9 +133,9 @@ async function getRandomMessage() {
   
 
     
-    msgListElement.push(stats.message1);
-    msgListElement.push(stats.message2);
-    msgListElement.push(stats.message3);
+    msgListElement.push(stats[0]);
+    msgListElement.push(stats[1]);
+    msgListElement.push(stats[2]);
    
  
      // Pick a random greeting.
