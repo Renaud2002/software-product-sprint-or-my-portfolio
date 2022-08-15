@@ -16,6 +16,9 @@
  * Adds a random greeting to the page.
  */
 
+
+
+
 var textNodes;
 
 function addRandomGreeting() {
@@ -45,12 +48,16 @@ function addRandomGreeting() {
         }
 
         // Data structure to convert to JSON, and send to the backend:
-        const languageElement = document.getElementById('language');        
+        const languageElement = document.getElementById('language');     
+        
+        Cookies.set("language",languageElement.options[languageElement.selectedIndex].value, {expires: 7})
+
         const translateParameters = {
             toLanguage: languageElement.options[languageElement.selectedIndex].value,
             stringsToTranslate: textContents
         };
 
+        
     
 
         const translateResponse = await fetch('/translate', {
@@ -116,6 +123,20 @@ window.onload = function(){
       }
 
     textNodes = textNodesUnder(document.body);
+
+
+    // cookies 
+    var lang = Cookies.get('language');
+
+    if(lang){
+        const languageElement = document.getElementById('language');
+
+        languageElement.value = lang;
+
+        requestTranslation();
+
+        
+    }
   };
 
 
